@@ -36,3 +36,43 @@ Run the following to initiate the server
 npm run start
 ```
 and point your browser to **localhost:3003**
+
+
+##CRUD Operations
+
+### Create / POST - Create a new Review
+
+#### Input
+
+- Request with JSON object in body containing the name of the reviewer, the review title, the review content, the review rating, the fit rating and the product ID of the shoe.  
+
+```
+Endpoint: `/reviews/create`
+
+Request Body:
+{
+    "name": string,
+    "headline": string,
+    "review": string,
+    "rating": integer,
+    "fit_feedback": integer,
+    "shoe_id": integer
+ }
+
+Request Body example:
+
+{
+    "name": Brian,
+    "headline": Unhappy with this show,
+    "review": The fitment is way off and the materail isn't that great,
+    "rating": 1,
+    "fit_feedback": 1,
+    "shoe_id": 92
+ }
+```
+
+#### Output
+
+- If the review is created successfully, a 200 status code with 'Review created successfully' will be sent in the response.
+
+- If the review is failed to be created, a 404 status code and message 'Error creating new Review' will be sent in the response.
