@@ -29,5 +29,44 @@ function getRating(shoeId) {
   });
 }
 
+function createReview(reviewData) {
+  return new Promise ((resolve, reject) => {
+    model.createReview(reviewData)
+    .then(()=>{
+      resolve(reviewData);
+    })
+    .catch(err => {
+      reject(err);
+    });
+  });
+}
+
+function updateReview(reviewId, reviewData){
+  return new Promise ((resolve, reject)=>{
+    model.updateReview(reviewId, reviewData)
+    .then(()=>{
+      resolve(reviewData);
+    })
+    .catch(err => {
+      reject(err);
+    });
+  });
+}
+
+function removeReview(reviewId){
+  return new Promise ((resolve, reject) => {
+    model.removeReview(reviewId)
+    .then(()=>{
+      resolve('Successfully removed review #',reviewId );
+    })
+    .catch(err => {
+      reject(err);
+    });
+  })
+}
+
 module.exports.getReviews = getReviews;
 module.exports.getRating = getRating;
+module.exports.createReview = createReview;
+module.exports.updateReview = updateReview;
+module.exports.removeReview = removeReview;
