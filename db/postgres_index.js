@@ -1,20 +1,21 @@
 require('dotenv').config();
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('fec_somebirds_feedback', 'student', '',  {
-  host: process.env.DEV_DB_HOST || 'fec-somebirds.cvmpdjgctjaa.us-east-2.rds.amazonaws.com',
-  port: 3306,
-  dialect: 'mysql',
+const sequelize = new Sequelize('fec_somebirds_feedback', 'brian.vu', '',  {
+  host: process.env.DEV_DB_HOST,
+  port: 5432,
+  dialect: 'postgres',
   logging: false
 });
 
 //use to check database connection
-sequelize.authenticate()
-.then(() => {
-  console.log('Connection has been established successfully.');
-})
-.catch((error) => {
-  console.error('Unable to connect to the database:', error);
-});
+
+// sequelize.authenticate()
+// .then(() => {
+//   console.log('Connection has been established successfully.');
+// })
+// .catch((error) => {
+//   console.error('Unable to connect to the database:', error);
+// });
 
 
 const Shoe = sequelize.define('shoe', {
@@ -70,6 +71,8 @@ const Review = sequelize.define('review', {
     }
   },
 }, { timestamps: true });
+
+console.log('IT GETS HERE');
 
 module.exports = {
   Shoe: Shoe,

@@ -32,7 +32,7 @@ app.get('/shoes/:shoeId/rating', (req, res) => {
   });
 });
 
-app.post('/reviews/create', (req, res) => {
+app.post('/reviews', (req, res) => {
   controller.createReview(req.body)
   .then((data) => {
     res.status(200).send('Review created successfully');
@@ -43,7 +43,7 @@ app.post('/reviews/create', (req, res) => {
   });
 })
 
-app.put('/reviews/:reviewId/update', (req, res) => {
+app.put('/reviews/:reviewId/', (req, res) => {
   let reviewId = req.params.reviewId;
   controller.updateReview(reviewId, req.body)
   .then((data) => {
@@ -55,7 +55,7 @@ app.put('/reviews/:reviewId/update', (req, res) => {
   });
 })
 
-app.delete('/reviews/:reviewId/remove', (req, res) => {
+app.delete('/reviews/:reviewId/', (req, res) => {
   let reviewId = req.params.reviewId;
   controller.removeReview(reviewId)
   .then((data) => {
