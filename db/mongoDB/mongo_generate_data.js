@@ -48,6 +48,7 @@ let generate_records = () =>{
         });
       });
     });
+
     loop++;
   }
 
@@ -70,29 +71,5 @@ let generate_records = () =>{
   console.timeEnd('Inserting 10M into MongoDB');
 })();
 
-// ( async () => {
-
-//   await Shoe.deleteMany({name: 'bad shoe!!!'});
-
-//   await Shoe.insertMany({
-//     name: 'bad shoe!!!',
-//     model: 1,
-//     rating_average: '3',
-//     fit_feedback_average: '0.9',
-//     review_count: 1,
-//     reviews: [{ name: 'Brian', headline: 'this shoe sucks', review: 'worst use of money', rating: 1, fit_feedback: -1},
-//               { name: 'Brian2', headline: 'this shoe sucks', review: 'worst use of money', rating: 1, fit_feedback: -1}]
-//   });
-
-//   await Shoe.find({}, (err, data)=>{
-//     if (err){
-//       console.log(err);
-//     } else {
-//       console.log('DATA: ', JSON.stringify(data));
-//     }
-//   });
-
-
-// })()
 
 
