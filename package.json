@@ -8,7 +8,7 @@
     "build": "webpack -w",
     "test": "jest",
     "mysql:seed": "mysql -u student < ./db/createDB.sql && node ./db/create_tables.js && node ./db/generate_data.js",
-    "psql:seed": "psql < ./db/createDB.sql && node ./db/create_tables.js && node ./db/postgres_generate_data.js",
+    "psql:seed": "psql < ./db/postgreSQL/createDB.sql && node ./db/postgreSQL/create_tables.js && node ./db/postgreSQL/postgres_generate_data.js",
     "db:createTables": "node ./db/create_tables.js",
     "db:dropTables": "node ./db/drop_tables.js"
   },
