@@ -70,7 +70,7 @@ const Review = sequelize.define('review', {
       key: 'id'
     }
   },
-}, { timestamps: true });
+}, { timestamps: false });
 
 console.log('IT GETS HERE');
 
