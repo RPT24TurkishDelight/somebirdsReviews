@@ -7,7 +7,8 @@
     "start": "nodemon ./server/start.js",
     "build": "webpack -w",
     "test": "jest",
-    "db:seed": "mysql -u student < ./db/createDB.sql && node ./db/create_tables.js && node ./db/generate_data.js",
+    "mysql:seed": "mysql -u student < ./db/createDB.sql && node ./db/create_tables.js && node ./db/generate_data.js",
+    "psql:seed": "psql < ./db/postgreSQL/createDB.sql && node ./db/postgreSQL/create_tables.js && node ./db/postgreSQL/postgres_generate_data.js",
     "db:createTables": "node ./db/create_tables.js",
     "db:dropTables": "node ./db/drop_tables.js"
   },
@@ -30,6 +31,8 @@
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "sequelize": "^6.3.5"
