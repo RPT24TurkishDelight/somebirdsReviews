@@ -1,5 +1,5 @@
 //const { Shoe, Review } = require('../db/index.js');
-const { Shoe, Review } = require('../db/postgres_index.js');
+const { Shoe, Review } = require('../db/postgreSQL/postgres_index.js');
 
 function getReviews(shoeId, count) {
   return Review.findAll({

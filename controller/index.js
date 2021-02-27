@@ -6,7 +6,7 @@ function getReviews(shoeId, count) {
     model.getReviews(shoeId, count)
     .then(data => {
       data = data.map(x => {
-        return { id: x.id, name: x.name, headline: x.headline, review: x.review, rating: x.rating, fit_feedback: x.fit_feedback, date: getDate(x.createdAt) };
+        return { id: x.id, name: x.name, headline: x.headline, review: x.review, rating: x.rating, fit_feedback: x.fit_feedback};
       });
       resolve(data);
     })
@@ -20,6 +20,7 @@ function getRating(shoeId) {
   return new Promise((resolve, reject) => {
     model.getRating(shoeId)
     .then((data) => {
+      console.log('DATA', data);
       let { id, name, model, rating_average, fit_feedback_average, review_count } = data[0];
       resolve({ id, name, model, rating_average, fit_feedback_average, review_count });
     })
