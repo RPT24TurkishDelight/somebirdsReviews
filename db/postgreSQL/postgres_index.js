@@ -1,6 +1,6 @@
 require('dotenv').config();
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('fec_somebirds_feedback', 'brian.vu', '',  {
+const sequelize = new Sequelize('fec_somebirds_feedback', 'sdc', 'password',  {
   host: process.env.DEV_DB_HOST,
   port: 5432,
   dialect: 'postgres',
@@ -9,13 +9,13 @@ const sequelize = new Sequelize('fec_somebirds_feedback', 'brian.vu', '',  {
 
 //use to check database connection
 
-// sequelize.authenticate()
-// .then(() => {
-//   console.log('Connection has been established successfully.');
-// })
-// .catch((error) => {
-//   console.error('Unable to connect to the database:', error);
-// });
+sequelize.authenticate()
+.then(() => {
+  console.log('Connection has been established successfully.');
+})
+.catch((error) => {
+  console.error('Unable to connect to the database:', error);
+});
 
 
 const Shoe = sequelize.define('shoe', {
